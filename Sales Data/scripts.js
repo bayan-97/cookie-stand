@@ -38,7 +38,7 @@ var Seattle={
       for (let index1 = 6; index1 < 13; index1++) {
         var li = document.createElement('li');
         Seattle.bayan(),
-        li.textContent= index1+'am'+ Seattle.cookieC();
+        li.textContent= index1+' am '+ Seattle.cookieC();
 
         tot= tot + Seattle.cookieC();
         ul.appendChild(li);
@@ -47,12 +47,12 @@ var Seattle={
 
           li = document.createElement('li');
           Seattle.bayan(),
-          li.textContent=i1+'am'+ Seattle.cookieC();
+          li.textContent=i1+' am '+ Seattle.cookieC();
           tot= tot + Seattle.cookieC();
           ul.appendChild(li);
         }
       }
-      li.textContent= 'totale'+ tot;
+      li.textContent= 'totle'+ tot;
       ul.appendChild(li);
     }
   }
