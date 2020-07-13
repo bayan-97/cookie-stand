@@ -1,12 +1,13 @@
 'use strict';
 var tot1=0;
 var tot2=0;
+var tot;
 var workHours = ['6 am', '7 am', '8 am', '9 am', '10 am', '11 am', '12 pm', '1 pm', '2 pm', '3 pm', '4 pm', '5 pm', '6 pm', '7 pm'];
 // var places= [];
 // var hours = [];
 
 
-var tot;
+
 function Room(min,max,avgCookie,customers,sum,result,header){
   // var res =[];
   var hed=[];
@@ -49,7 +50,11 @@ Room.prototype.follw2= function () {
   parentElement.appendChild(article);
   var tot;
   var table1 = document.createElement('table');
-  table1.setAttribute('border', '1');
+  table1.setAttribute('border', '5px','solid','black');
+  table1.setAttribute('width', '100%');
+  table1.setAttribute('border-collapse', 'collapse');
+
+
   var tr1 = document.createElement('tr');
   var td1=  document.createElement('td');
   tr1.append(td1);
@@ -134,6 +139,7 @@ function headerdetail() {
   var article = document.createElement('article');
   parentElement.appendChild(article);
   var table = document.createElement('table');
+  table.setAttribute('width', '100%');
   var tr = document.createElement('tr');
   var th1  = document.createElement('th');
   tr.append(th1);
@@ -158,7 +164,10 @@ function footertot() {
   var article = document.createElement('article');
   parentElement.appendChild(article);
   var table3 = document.createElement('table');
-  table3.setAttribute('border', '1');
+
+  table3.setAttribute('border', '5px','solid','black');
+  table3.setAttribute('border-collapse', 'collapse');
+  table3.setAttribute('width', '100%');
   var tr6 = document.createElement('tr');
   var td6  = document.createElement('td');
   tr6.append(td6);
