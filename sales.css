@@ -1,5 +1,35 @@
-header nav ul li{
-    display: inline;
-    text-decoration: none;
-    flex-flow: left;
+section table{
+    float: initial;
+    border: solid;
+    background-color: blanchedalmond;
+    table-layout: auto;
+}
+caption{
+   align-items: center; 
+   border: solid;
+   color: brown;
+}
+ul li{
+    display: inline-flex;
+    margin: 20px;
+    list-style: none;
+     color:darkblue;
+     background-color: cornsilk;
+     text-align: center;
+
+
+}
+img{
+    width: 100%;
+    height: auto;
+
+}
+p{
+    color: darkslategray;
+    text-align: center;
+}
+.cap2{
+    color: black;
+    background-color: blanchedalmond;
+    font-size: larger;
 }

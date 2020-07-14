@@ -46,7 +46,7 @@ Room.prototype.cookieC= function () {
 //   }
 
 // };
-;
+
 Room.prototype.follw2= function () {
   var parentElement = document.getElementById('cookielist');
   var article = document.createElement('article');
@@ -135,6 +135,7 @@ lima.follw2();
 
 
 footertot();
+console.log(cookeshour1);
 function generateRandomcustomer(max1, min1){
   var generatedCustomer = Math.floor((Math.random()*(max1-min1))+min1);
   return generatedCustomer;
@@ -148,7 +149,6 @@ function headerdetail() {
   var tr = document.createElement('tr');
   var th1  = document.createElement('th');
   tr.appendChild(th1);
-  th1.textContent = 0;
   for (let index1 = 0; index1 < workHours.length; index1++) {
     var th2 = document.createElement('th');
     tr.appendChild(th2);
@@ -188,9 +188,10 @@ function footertot() {
       var td7 = document.createElement('td');
       tr6.appendChild(td7);
       td7.textContent = cookeshour1[0] + cookeshour1[1] +cookeshour1[2] +cookeshour1[3]+cookeshour1[4]+cookeshour1[5] ;
+
       for(var i= 0; i < cookeshour1.length; i++){
         // eslint-disable-next-line no-undef
-          cookeshour1.pop(i)
+        cookeshour1.pop(i);
       }
       check=false;
     }
@@ -208,3 +209,4 @@ function footertot() {
   article.appendChild(table3);
 
 }
+console.log(cookeshour1);
