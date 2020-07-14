@@ -22,7 +22,6 @@ function Room(min,max,avgCookie,customers,sum,result,header){
   this.sum=sum;
   this.result=result;
   this.cookeshour=[];
-  this.cookeshour1=[];
 
   // places.push(this);
 
@@ -187,7 +186,7 @@ function footertot() {
     while (check) {
       var td7 = document.createElement('td');
       tr6.appendChild(td7);
-      td7.textContent = cookeshour1[0] + cookeshour1[1] +cookeshour1[2] +cookeshour1[3]+cookeshour1[4]+cookeshour1[5] ;
+      td7.textContent = cookeshour1[0] + cookeshour1[1] +cookeshour1[2] +cookeshour1[3]+cookeshour1[4] ;
 
       for(var i= 0; i < cookeshour1.length; i++){
         // eslint-disable-next-line no-undef
