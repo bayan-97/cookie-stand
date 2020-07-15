@@ -1,4 +1,4 @@
-'use strict';
+ 'use strict'
 var tot1=0;
 var tot2=0;
 var tot=0;
@@ -134,7 +134,7 @@ cookielistuser.addEventListener('submit', function(){
   newlocation.randomNUM();
   newlocation.cookieC();
   newlocation.follw2();
-     footertot();
+  footertot( newlocation);
 
   
 });
@@ -170,7 +170,7 @@ function generateRandomcustomer(max1, min1){
 
 
 }
- function footertot() {
+function footertot(a) {
   var parentElement = document.getElementById('cookielist');
   var article = document.createElement('article');
   parentElement.appendChild(article);
@@ -185,15 +185,20 @@ function generateRandomcustomer(max1, min1){
   for (let index1 =0; index1 < workHours.length; index1++) {
     for (let index = 0; index <placescook.length; index++) {
       placescook[index].randomNUM();
-      tot1=tot1+ placescook[index].cookieC();
+      a.randomNUM()
+      tot1=tot1+ placescook[index].cookieC()
       cookeshour1.push(placescook[index].cookieC());
-      var check=true;
+  
+     
     }
+    tot1=tot1+a.cookieC()
+    cookeshour1.push(a.cookieC());
+    var check=true;
     while (check) {
       var td7 = document.createElement('td');
       tr6.appendChild(td7);
-      td7.textContent = cookeshour1[0] + cookeshour1[1] +cookeshour1[2] +cookeshour1[3]+cookeshour1[4] ;
-      tot2=tot2+ cookeshour1[0] + cookeshour1[1] +cookeshour1[2] +cookeshour1[3]+cookeshour1[4];
+      td7.textContent = cookeshour1[0] + cookeshour1[1] +cookeshour1[2] +cookeshour1[3]+cookeshour1[4]+cookeshour1[5] ;
+      tot2=tot2+ cookeshour1[0] + cookeshour1[1] +cookeshour1[2] +cookeshour1[3]+cookeshour1[4]+cookeshour1[5];
       for(var i= 0; i < cookeshour1.length; i++){
         cookeshour1.pop(i);
       }
@@ -210,4 +215,3 @@ function generateRandomcustomer(max1, min1){
   article.appendChild(table3);
 
 }
-
