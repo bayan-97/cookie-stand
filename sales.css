@@ -4,8 +4,8 @@ section table{
     background-color: blanchedalmond;
     table-layout: auto;
 }
-caption{
-   align-items: center; 
+caption h1 {
+   text-align: center; 
    border: solid;
    color: brown;
 }
@@ -40,4 +40,23 @@ p{
     width: 100%;
     height: auto;
     box-shadow: cornsilk;
+}
+.link{
+    display: inline-flex;
+    margin: 20px;
+    list-style: none;
+     color:darkblue;
+     background-color: cornsilk;
+     /* text-align: right; */
+     float: right;
+}
+.salesre{
+    widows: 300px;;
+    height: 150px;
+    display: inline-flexbox;
+    float: left;
+
+}
+.sal{
+    text-align: left;
 }
