@@ -9,7 +9,7 @@ caption h1 {
    border: solid;
    color: brown;
 }
-ul li{
+ul {
     display: inline-flex;
     margin: 20px;
     list-style: none;
@@ -42,8 +42,12 @@ p{
     box-shadow: cornsilk;
 }
 .link{
-    display: inline-flex;
-    margin: 20px;
+    display: inline;
+    font-size: larger;
+    font-weight: bolder;
+    text-align: left;
+    margin: 100px;
+    margin-right: 50px;
     list-style: none;
      color:darkblue;
      background-color: cornsilk;
@@ -55,8 +59,12 @@ p{
     height: 150px;
     display: inline-flexbox;
     float: left;
+    margin-bottom: 50px;
 
 }
 .sal{
     text-align: left;
+    color: black;
+    font-size: larger;
+    font-weight: bolder;
 }
