@@ -1,7 +1,7 @@
 'use strict';
 var tot1=0;
 var tot2=0;
-var tot;
+var tot=0;
 var workHours = ['6 am', '7 am', '8 am', '9 am', '10 am', '11 am', '12 pm', '1 pm', '2 pm', '3 pm', '4 pm', '5 pm', '6 pm', '7 pm'];
 // var places= [];
 // var hours = [];
@@ -31,43 +31,29 @@ function Room(min,max,avgCookie,customers,sum,result,header){
 Room.prototype.cookieC= function () {
   return Math.ceil (this.customers*this.avgCookie);
 };
-// Room.prototype.follw= function() {
-//   var parentElement = document.getElementById('cookielist');
-//   var article = document.createElement('article');
-//   parentElement.appendChild(article);
-//   var ul = document.createElement('ul');
-//   article.appendChild(ul);
 
-//   for (let index = 0; index < this.result.length; index++) {
-//     var li = document.createElement('li');
-//     li.textContent = this.result[index];
-//     ul.appendChild(li);
-//   }
-
-// };
 
 Room.prototype.follw2= function () {
   var parentElement = document.getElementById('cookielist');
   var article = document.createElement('article');
   parentElement.appendChild(article);
-  var tot;
   var table1 = document.createElement('table');
   table1.setAttribute('border', '5px','solid','black');
   table1.setAttribute('width', '100%');
-  table1.setAttribute('border-collapse', 'collapse');
-
+  
 
   var tr1 = document.createElement('tr');
   var td1=  document.createElement('td');
   tr1.appendChild(td1);
   td1.textContent = this.header;
+  tot=0
   for (let index1 =0; index1 < workHours.length; index1++) {
 
     var td2 = document.createElement('td');
     this.randomNUM(),
     tr1.appendChild(td2);
     td2.textContent =this.cookieC();
-    tot= this.cookieC();
+    tot= tot+this.cookieC();
     // console.log(this.cookieC());
     this.sum.push(tot);
     // console.log(this.sum.push(tot));
@@ -145,6 +131,8 @@ function headerdetail() {
   parentElement.appendChild(article);
   var table = document.createElement('table');
   table.setAttribute('width', '100%');
+  table.setAttribute('empty-cells', 'hide');
+  table.setAttribute('border-collapse', 'collapse');
   var tr = document.createElement('tr');
   var th1  = document.createElement('th');
   tr.appendChild(th1);
@@ -170,7 +158,6 @@ function footertot() {
   var table3 = document.createElement('table');
 
   table3.setAttribute('border', '5px','solid','black');
-  table3.setAttribute('border-collapse', 'collapse');
   table3.setAttribute('width', '100%');
   var tr6 = document.createElement('tr');
   var td6  = document.createElement('td');
@@ -187,7 +174,7 @@ function footertot() {
       var td7 = document.createElement('td');
       tr6.appendChild(td7);
       td7.textContent = cookeshour1[0] + cookeshour1[1] +cookeshour1[2] +cookeshour1[3]+cookeshour1[4] ;
-
+      tot2=tot2+ cookeshour1[0] + cookeshour1[1] +cookeshour1[2] +cookeshour1[3]+cookeshour1[4] ;
       for(var i= 0; i < cookeshour1.length; i++){
         // eslint-disable-next-line no-undef
         cookeshour1.pop(i);
@@ -198,7 +185,7 @@ function footertot() {
     // var td7 = document.createElement('td');
     // tr6.apendchild(td7);
     // td7.textContent = cookeshour1[0] + cookeshour1[1] +cookeshour1[2] +cookeshour1[3] ;
-    tot2=tot2+tot1;
+   
   }
 
   var td8  = document.createElement('td');
