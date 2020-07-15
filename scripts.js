@@ -335,31 +335,31 @@ var Dubai={
 Seattle.bayan();
 Seattle.cookieC();
 Seattle.result.push(Seattle.cookieC());
-Seattle.follw();
+// Seattle.follw();
 Seattle.follw2();
 
 Tokyo.bayan(),
 Tokyo.cookieC(),
 Tokyo.result.push(Tokyo.cookieC());
-Tokyo.follw();
+// Tokyo.follw();
 Tokyo.follw2();
 
 Dubai.bayan(),
 Dubai.cookieC(),
 Dubai.result.push(Dubai.cookieC());
-Dubai.follw();
+// Dubai.follw();
 Dubai.follw2();
 
 paris.bayan(),
 paris.cookieC(),
 paris.result.push(paris.cookieC());
-paris.follw();
+// paris.follw();
 paris.follw2();
 
 lima.bayan(),
 lima.cookieC(),
 lima.result.push(lima.cookieC());
-lima.follw();
+// lima.follw();
 lima.follw2();
 
 function generateRandomcustomer(max, min){
