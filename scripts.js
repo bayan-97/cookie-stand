@@ -116,6 +116,7 @@ var cookielistuser= document.getElementById("cookielistuser")
 cookielistuser.addEventListener('submit', function(){
   
   event.preventDefault();
+ 
   
   var usermin = event.target.Min.value;
   var usermax = event.target.Max.value;
@@ -131,10 +132,16 @@ cookielistuser.addEventListener('submit', function(){
   )
    
   
-  newlocation.randomNUM();
-  newlocation.cookieC();
-  newlocation.follw2();
-  footertot( newlocation);
+  if((usermax-usermin)>0) {
+    newlocation.randomNUM();
+    newlocation.cookieC();
+    newlocation.follw2();
+    footertot( newlocation);
+  
+    
+  } else {
+    alert("please min number less than max")
+  }
 
   
 });
