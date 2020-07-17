@@ -2,16 +2,11 @@
 var tot1=0;
 var tot2=0;
 var tot=0;
-
 var workHours = ['6 am', '7 am', '8 am', '9 am', '10 am', '11 am', '12 pm', '1 pm', '2 pm', '3 pm', '4 pm', '5 pm', '6 pm', '7 pm'];
-
 var cookeshour1=[];
-
+var placescook=[];
 function Room(min,max,avgCookie,header){
-  
   var hed=[];
-
- 
   hed.push(header);
   this.header=hed;
   this.min=min;
@@ -22,7 +17,7 @@ function Room(min,max,avgCookie,header){
   this.result=[];
   this.cookeshour=[];
 
-  // places.push(this);
+   placescook.push(this);
 
 
 }
@@ -30,17 +25,15 @@ function Room(min,max,avgCookie,header){
 Room.prototype.cookieC= function () {
   return Math.ceil (this.customers*this.avgCookie);
 };
-
-
-Room.prototype.follw2= function () {
-  var parentElement = document.getElementById('cookielist');
+headerdetail();
+var parentElement = document.getElementById('cookielist');
   var article = document.createElement('article');
   parentElement.appendChild(article);
   var table1 = document.createElement('table');
   table1.setAttribute('border', '5px','solid','black');
   table1.setAttribute('width', '100%');
   
-
+Room.prototype.follw2= function () {
   var tr1 = document.createElement('tr');
   var td1=  document.createElement('td');
   tr1.appendChild(td1);
@@ -53,11 +46,8 @@ Room.prototype.follw2= function () {
     tr1.appendChild(td2);
     td2.textContent =this.cookieC();
     tot= tot+this.cookieC();
-    // console.log(this.cookieC());
     this.sum.push(tot);
-    // console.log(this.sum.push(tot));
-
-
+  
 
   }
 
@@ -81,70 +71,19 @@ var Tokyo= new Room(3,24,1.2,'Tokyo');
 var paris= new Room(20,38,2.3 ,'paris');
 var Dubai= new Room(11,38,3.7,'Dubai');
 var lima= new Room(2,16,4.6,'lima');
-var placescook=[Seattle,Tokyo,paris,Dubai,lima];
-
-headerdetail();
-
-Seattle.randomNUM();
-Seattle.cookieC();
-Seattle.result.push(Seattle.cookieC());
-Seattle.follw2();
 
 
-Tokyo.randomNUM(),
-Tokyo.cookieC(),
-Tokyo.result.push(Tokyo.cookieC());
-Tokyo.follw2();
 
-Dubai.randomNUM(),
-Dubai.cookieC(),
-Dubai.result.push(Dubai.cookieC());
-Dubai.follw2();
+for (let i5 = 0; i5 < placescook.length; i5++) {
+  placescook[i5].randomNUM();
+placescook[i5].cookieC();
+placescook[i5].result.push(placescook[i5].cookieC());
+placescook[i5].follw2();
 
-paris.randomNUM(),
-paris.cookieC(),
-paris.result.push(paris.cookieC());
-paris.follw2();
+}
 
 
-lima.randomNUM(),
-lima.cookieC(),
-lima.result.push(lima.cookieC());
-lima.follw2();
 
-var cookielistuser= document.getElementById("cookielistuser")
-cookielistuser.addEventListener('submit', function(){
-  
-  event.preventDefault();
- 
-  
-  var usermin = event.target.Min.value;
-  var usermax = event.target.Max.value;
-  var useravergcookie = event.target.Avgcookies.value;
-  var userlocation = event.target.Location.value;
-
-  
-  var newlocation = new Room(
-       usermin,
-       usermax,
-       useravergcookie,
-       userlocation ,
-  )
-   
-  
-  if((usermax-usermin)>0) {
-    newlocation.randomNUM();
-    newlocation.cookieC();
-    newlocation.follw2();
-    footertot( newlocation);
-  
-    
-  } else {
-    alert("please min number less than max")
-  }
-
-  
-});
 
 
 function generateRandomcustomer(max1, min1){
@@ -176,15 +115,10 @@ function generateRandomcustomer(max1, min1){
   article.appendChild(table);
 
 
+  
 }
-function footertot(a) {
-  var parentElement = document.getElementById('cookielist');
-  var article = document.createElement('article');
-  parentElement.appendChild(article);
-  var table3 = document.createElement('table');
-
-  table3.setAttribute('border', '5px','solid','black');
-  table3.setAttribute('width', '100%');
+footertot()
+function footertot() {
   var tr6 = document.createElement('tr');
   var td6  = document.createElement('td');
   tr6.appendChild(td6);
@@ -192,24 +126,32 @@ function footertot(a) {
   for (let index1 =0; index1 < workHours.length; index1++) {
     for (let index = 0; index <placescook.length; index++) {
       placescook[index].randomNUM();
-      a.randomNUM()
       tot1=tot1+ placescook[index].cookieC()
       cookeshour1.push(placescook[index].cookieC());
   
      
     }
-    tot1=tot1+a.cookieC()
-    cookeshour1.push(a.cookieC());
+   
     var check=true;
-    while (check) {
+   if (check &&(placescook.length=4)){
       var td7 = document.createElement('td');
       tr6.appendChild(td7);
-      td7.textContent = cookeshour1[0] + cookeshour1[1] +cookeshour1[2] +cookeshour1[3]+cookeshour1[4]+cookeshour1[5] ;
-      tot2=tot2+ cookeshour1[0] + cookeshour1[1] +cookeshour1[2] +cookeshour1[3]+cookeshour1[4]+cookeshour1[5];
+      td7.textContent = cookeshour1[0] + cookeshour1[1] +cookeshour1[2] +cookeshour1[3]+cookeshour1[4] ;
+      tot2=tot2+ cookeshour1[0] + cookeshour1[1] +cookeshour1[2] +cookeshour1[3]+cookeshour1[4];
       for(var i= 0; i < cookeshour1.length; i++){
         cookeshour1.pop(i);
       }
-      check=false;
+      
+    } else {
+      
+      var td7 = document.createElement('td');
+    tr6.appendChild(td7);
+    td7.textContent = cookeshour1[0] + cookeshour1[1] +cookeshour1[2] +cookeshour1[3]+cookeshour1[4]+cookeshour1[5] ;
+    tot2=tot2+ cookeshour1[0] + cookeshour1[1] +cookeshour1[2] +cookeshour1[3]+cookeshour1[4]+cookeshour1[5];
+    for(var i= 0; i < cookeshour1.length; i++){
+      cookeshour1.pop(i);
+    }
+
     }
 
    
@@ -218,7 +160,42 @@ function footertot(a) {
   var td8  = document.createElement('td');
   tr6.appendChild(td8);
   td8.textContent =tot2 ;
-  table3.appendChild(tr6);
-  article.appendChild(table3);
+  table1.appendChild(tr6);
+  article.appendChild(table1);
+
 
 }
+var cookielistuser= document.getElementById("cookielistuser")
+cookielistuser.addEventListener('submit', function(){
+  
+  event.preventDefault();
+ 
+  
+  var usermin = Number(event.target.Min.value) ;
+  var usermax =Number(event.target.Max.value) ;
+  var useravergcookie = Number( event.target.Avgcookies.value) ;
+  var userlocation = event.target.Location.value;
+
+  
+  var newlocation = new Room(
+       usermin,
+       usermax,
+       useravergcookie,
+       userlocation ,
+  )
+   
+  
+  if((usermax-usermin)>0) {
+      table1.removeChild(table1.lastChild)
+    newlocation.randomNUM();
+    newlocation.cookieC();
+    newlocation.follw2();
+    footertot();
+  
+    
+  } else {
+    alert("please min number less than max")
+  }
+    
+  
+});
