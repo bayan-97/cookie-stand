@@ -95,10 +95,6 @@ function generateRandomcustomer(max1, min1){
   var parentElement = document.getElementById('cookielist');
   var article = document.createElement('article');
   parentElement.appendChild(article);
-  // var table = document.createElement('table');
-  // table.setAttribute('width', '100%');
-  // table.setAttribute('border', '5px','solid','black');
-  
   var tr = document.createElement('tr');
   var th1  = document.createElement('th');
   th1.textContent ="name location";
