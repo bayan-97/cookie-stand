@@ -25,13 +25,14 @@ function Room(min,max,avgCookie,header){
 Room.prototype.cookieC= function () {
   return Math.ceil (this.customers*this.avgCookie);
 };
-headerdetail();
+
 var parentElement = document.getElementById('cookielist');
   var article = document.createElement('article');
   parentElement.appendChild(article);
   var table1 = document.createElement('table');
   table1.setAttribute('border', '5px','solid','black');
   table1.setAttribute('width', '100%');
+  headerdetail()
   
 Room.prototype.follw2= function () {
   var tr1 = document.createElement('tr');
@@ -94,12 +95,14 @@ function generateRandomcustomer(max1, min1){
   var parentElement = document.getElementById('cookielist');
   var article = document.createElement('article');
   parentElement.appendChild(article);
-  var table = document.createElement('table');
-  table.setAttribute('width', '100%');
-  table.setAttribute('empty-cells', 'hide');
-  table.setAttribute('border-collapse', 'collapse');
+  // var table = document.createElement('table');
+  // table.setAttribute('width', '100%');
+  // table.setAttribute('border', '5px','solid','black');
+  
   var tr = document.createElement('tr');
   var th1  = document.createElement('th');
+  th1.textContent ="name location";
+
   tr.appendChild(th1);
   for (let index1 = 0; index1 < workHours.length; index1++) {
     var th2 = document.createElement('th');
@@ -111,8 +114,8 @@ function generateRandomcustomer(max1, min1){
   var th3 = document.createElement('th');
   tr.appendChild(th3);
   th3.textContent = 'Daily Location Total';
-  table.appendChild(tr);
-  article.appendChild(table);
+  table1.appendChild(tr);
+  article.appendChild(table1);
 
 
   
