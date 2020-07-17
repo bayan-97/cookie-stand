@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="index.html">
+   
+</head>
+<body class="b1">
+    <main>
+        <form id="cookielistuser">
+        <fieldset>
+            <legend>Suggestion location</legend>
+        <table>
+              <tr>
+                  <td><label for="Min" >Main hourly customers </label></td>
+                  <td><input type="number"  id="Min" required  ></td>
+              </tr>
+              <tr>
+                <td><label for="Max" >max hourly customers </label></td>
+                <td><input type="number"  id="Max" required ></td>
+            </tr>
+            <tr>
+                <td><label for="Avgcookies"> average cookies per customer </label></td>
+                <td><input type="number"  id="Avgcookies" required step="0.01"></td>
+            </tr>
+            <tr>
+                <td><label for="Location">location you will add</label></td>
+                <td><input required type="text"  id="Location"  ></td>
+            </tr>
+            <tr>
+                <td><input required type="submit" value="sumbit to your Suggestion location "></td>
+                <td></td>
+            </tr>
+        </table>
+       
+
+   
+    </fieldset>
+    </form>
+<div id="cookielist"></div>
+    </main>
+<script src="scripts.js"></script>
+</body>
+
+</html> 
