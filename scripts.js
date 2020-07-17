@@ -13,9 +13,8 @@ function Room(min,max,avgCookie,header){
   this.max=max;
   this.customers=10;
   this.avgCookie=avgCookie;
-  this.sum=[];
-  this.result=[];
-  this.cookeshour=[];
+  this.cusmerperhor=[];
+  this.cokperhor=[];
 
    placescook.push(this);
 
@@ -23,7 +22,13 @@ function Room(min,max,avgCookie,header){
 }
 
 Room.prototype.cookieC= function () {
-  return Math.ceil (this.customers*this.avgCookie);
+  tot=0
+  for (let i9 = 0; i9 < this.cusmerperhor.length; i9++) {
+  var numbercooki=Math.ceil (this.cusmerperhor[i9] *this.avgCookie);
+   this.cokperhor.push( numbercooki);
+   tot=tot+numbercooki
+  }
+  
 };
 
 var parentElement = document.getElementById('cookielist');
@@ -39,15 +44,16 @@ Room.prototype.follw2= function () {
   var td1=  document.createElement('td');
   tr1.appendChild(td1);
   td1.textContent = this.header;
-  tot=0
-  for (let index1 =0; index1 < workHours.length; index1++) {
+  // tot=0
+  for (let index1 =0; index1 < this.cokperhor.length; index1++) {
 
     var td2 = document.createElement('td');
-    this.randomNUM(),
+    
+    
+    td2.textContent =this.cokperhor[index1];
     tr1.appendChild(td2);
-    td2.textContent =this.cookieC();
-    tot= tot+this.cookieC();
-    this.sum.push(tot);
+    // tot= tot+this.cookieC();
+    // this.sum.push(tot);
   
 
   }
@@ -64,7 +70,11 @@ Room.prototype.follw2= function () {
 };
 
 Room.prototype.randomNUM= function () {
-  this.customers= generateRandomcustomer(this. max,this.min);
+  for (let i0 = 0; i0 < workHours.length; i0++) {
+    this.customers= generateRandomcustomer(this. max,this.min);
+   this.cusmerperhor.push(this.customers)
+  }
+ 
 
 };
 var Seattle= new Room(23,65,6.3,'Seattle');
@@ -78,7 +88,6 @@ var lima= new Room(2,16,4.6,'lima');
 for (let i5 = 0; i5 < placescook.length; i5++) {
   placescook[i5].randomNUM();
 placescook[i5].cookieC();
-placescook[i5].result.push(placescook[i5].cookieC());
 placescook[i5].follw2();
 
 }
@@ -122,47 +131,31 @@ function footertot() {
   var td6  = document.createElement('td');
   tr6.appendChild(td6);
   td6.textContent ='totle' ;
+  tot2=0;
   for (let index1 =0; index1 < workHours.length; index1++) {
+    var td7 = document.createElement('td');
+    tot1=0
     for (let index = 0; index <placescook.length; index++) {
-      placescook[index].randomNUM();
-      tot1=tot1+ placescook[index].cookieC()
-      cookeshour1.push(placescook[index].cookieC());
+      
+     
+      tot1=tot1+ placescook[index].cokperhor[index1]
+      
   
      
     }
    
-    var check=true;
-   if (check &&(placescook.length=4)){
-      var td7 = document.createElement('td');
-      tr6.appendChild(td7);
-      td7.textContent = cookeshour1[0] + cookeshour1[1] +cookeshour1[2] +cookeshour1[3]+cookeshour1[4] ;
-      tot2=tot2+ cookeshour1[0] + cookeshour1[1] +cookeshour1[2] +cookeshour1[3]+cookeshour1[4];
-      for(var i= 0; i < cookeshour1.length; i++){
-        cookeshour1.pop(i);
-      }
-      
-    } else {
-      
-      var td7 = document.createElement('td');
-    tr6.appendChild(td7);
-    td7.textContent = cookeshour1[0] + cookeshour1[1] +cookeshour1[2] +cookeshour1[3]+cookeshour1[4]+cookeshour1[5] ;
-    tot2=tot2+ cookeshour1[0] + cookeshour1[1] +cookeshour1[2] +cookeshour1[3]+cookeshour1[4]+cookeshour1[5];
-    for(var i= 0; i < cookeshour1.length; i++){
-      cookeshour1.pop(i);
-    }
-
-    }
-
-   
-  }
-
-  var td8  = document.createElement('td');
-  tr6.appendChild(td8);
-  td8.textContent =tot2 ;
+  
+  tot2=tot2+tot1
+  tr6.appendChild(td7);
+  td7.textContent =tot1
   table1.appendChild(tr6);
-  article.appendChild(table1);
 
-
+}
+var td8  = document.createElement('td');
+tr6.appendChild(td8);
+td8.textContent =tot2 ;
+table1.appendChild(tr6);
+article.appendChild(table1);
 }
 var cookielistuser= document.getElementById("cookielistuser")
 cookielistuser.addEventListener('submit', function(){
